@@ -21,7 +21,7 @@ jobs:
         pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget
     - name: Clone source code
       env:
-        KERNEL: 4.4
+        KERNEL: 3.4
       run: |
         git clone --depth=1 https://github.com/fightroad/Padavan-KVR.git /opt/rt-n56u
         cd /opt/rt-n56u/toolchain-mipsel
@@ -30,7 +30,7 @@ jobs:
     - name: Build Firmware
       env:
         TNAME: MI-R4A
-        KERNEL: 4.4
+        KERNEL: 3.4
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
